@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
-                    cmake build . --preset="release-linux-x64"
+                    cmake build . --out-dir "build" --preset="release-linux-x64"
                 '''
             }
         }
