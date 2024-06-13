@@ -2,10 +2,17 @@ pipeline {
     agent any
 
     stages {
+        stage('Configure') {
+            steps {
+                sh '''
+                    cmake -S . -B build --preset="release-linux-x64"
+                '''
+            }
+        }
         stage('Build') {
             steps {
                 sh '''
-                    cmake build . --out-dir "build" --preset="release-linux-x64"
+                   cmake --build build"
                 '''
             }
         }
