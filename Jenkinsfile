@@ -2,19 +2,18 @@ pipeline {
     agent any
 
     stages {
+        stage('Configure') {
+            steps {
+                dir('build') {
+                    sh 'cmake ../'
+                }
+            }
+        }
         stage('Build') {
             steps {
-                echo 'Building..'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                dir('build') {
+                    sh 'cmake --build .'
+                }
             }
         }
     }

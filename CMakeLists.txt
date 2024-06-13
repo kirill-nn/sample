@@ -24,7 +24,6 @@ add_executable(${PROJECT_NAME}Tests ${TEST_SOURCES})
 
 target_link_libraries(${PROJECT_NAME}Tests PRIVATE
         fmt::fmt-header-only
-        asio::asio
         GTest::gtest
         GTest::gtest_main
         GTest::gmock
