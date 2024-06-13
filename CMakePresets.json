@@ -1,0 +1,15 @@
+{
+  "version": 4,
+  "configurePresets": [
+    {
+      "name": "release-linux-x64",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "1",
+        "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/contrib/vcpkg/scripts/buildsystems/vcpkg.cmake",
+        "VCPKG_TARGET_TRIPLET": "x64-linux"
+      }
+    }
+  ]
+}
