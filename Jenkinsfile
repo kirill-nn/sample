@@ -5,7 +5,7 @@ pipeline {
         stage('CMake build') {
             steps {
                 cmake arguments: '--preset="release-linux-x64"', installation: 'InSearchPath'
-                cmakeBuild buildType: 'Release', buildDir: 'build', cleanBuild: true, installation: 'InSearchPath', steps: [[withCmake: true]]
+                cmakeBuild buildType: 'Release', installation: 'InSearchPath', steps: [[withCmake: true]]
             }
         }
     }
