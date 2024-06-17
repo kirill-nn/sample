@@ -2,18 +2,10 @@ pipeline {
     agent any
 
     stages {
-        stage('Configure') {
+        stage('CMake build') {
             steps {
-                sh '''
-                    cmake -S . -B build --preset="release-linux-x64"
-                '''
-            }
-        }
-        stage('Build') {
-            steps {
-                sh '''
-                   cmake --build build
-                '''
+                cmake arguments: '--preset="release-linux-x64"', installation: 'InSearchPath'
+                cmakeBuild buildType: 'Release', cleanBuild: true, installation: 'InSearchPath', steps: [[withCmake: true]]
             }
         }
     }
