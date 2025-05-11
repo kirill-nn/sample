@@ -55,12 +55,12 @@ jobs:
             exit 1
         }
     - name: Create GitHub Release
-        uses: softprops/action-gh-release@v1
-        with:
-          tag_name: ${{ github.ref_name }}
-          name: Release ${{ github.ref_name }}
-          files: |
-            build/myapp
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: ${{ github.ref_name }}
+        name: Release ${{ github.ref_name }}
+        files: |
+          build/myapp
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
