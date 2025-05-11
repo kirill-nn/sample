@@ -57,10 +57,10 @@ jobs:
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v1
       with:
-        tag_name: ${{ github.ref_name }}
-        name: Release ${{ github.ref_name }}
+        tag_name: $process.env.VERSION
+        name: Release $process.env.VERSION
         files: |
-          build/myapp
+          build/sample
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
