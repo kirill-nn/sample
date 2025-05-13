@@ -1,1 +1,1 @@
-#define VER_FILEVERSION             0,0,2
+#define VER_FILEVERSION             0,0,1
